@@ -1,0 +1,31 @@
+{
+  "name": "hasheyes_art_engine",
+  "version": "1.0.0",
+  "description": "HashEyes Art Engine is a tool used to create multiple different instances of artworks based on provided audio, image or video layers.",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "hasheyes": "src/cli.js"
+  },
+  "pkg": {
+    "assets": [
+      "layers/**/*",
+      "node_modules/**/*",
+      "src/**/*"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jonathan Rico / NathanRedblur",
+  "license": "MIT",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "jsonc-parser": "^3.0.0",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint-config-node": "^4.1.0"
+  }
+}

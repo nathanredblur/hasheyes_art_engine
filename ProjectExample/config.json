@@ -1,0 +1,40 @@
+{
+  // General metadata for Ethereum
+  "name" : "Your Collection",
+  "description" : "Remember to replace this description",
+  "author": "NathanRedBlur", 
+  "version": "1.0.0",
+  "tags": ["example", "collection"],
+  "baseUri" : "ipfs://NewUriToReplace",
+
+  "extraMetadata": {},
+
+  "layerConfigurations" : [
+    {
+      "total": 2,
+      "layersOrder": [
+        { "name": "Music",
+          "displayName": "Music Style",
+          "bypassDNA": true,
+        },
+        { "name": "Background" },
+        { "name": "Fire" },
+        { "name": "Pokemon" },
+      ]
+    },
+    {
+      "total": 3,
+      "layersOrder": [
+        { "name": "Music",
+          "displayName": "Music Style",
+        },
+        { "name": "Background" },
+        { 
+          "name": "Fire",
+        },
+        { "name": "Pokemon" },
+      ]
+    }
+    
+  ]
+}
