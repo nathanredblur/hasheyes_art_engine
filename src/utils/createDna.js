@@ -27,15 +27,15 @@ const createRandomDna = (layers) => {
   });
 
   const dnaId = dnaChain.join(DNA_DELIMITER);
-  return [dnaId, layerDna];
+  return {dnaId, layerDna};
 }
 
 const createDna = (layers, random) => {
   if (random) {
     while (true) {
       const metaDna = createRandomDna(layers);
-      if (!dnaList.has(metaDna[0])) {
-        dnaList.add(metaDna[0]);
+      if (!dnaList.has(metaDna.dnaId)) {
+        dnaList.add(metaDna.dnaId);
         return metaDna;
       }
 

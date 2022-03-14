@@ -11,6 +11,7 @@ const getAttributes = (layerDna) => layerDna
   .map((layer) => ({
     trait_type: layer.name,
     value: layer.selectedElement.name,
+    path: layer.selectedElement.path,
   })
 );
 
@@ -52,10 +53,10 @@ const processConfig = (config, basePath) => {
         break;
       }
 
-      metaDataList.push(parseMetaData(config, metaDna[0], metaDna[1], editionCount));
+      metaDataList.push(parseMetaData(config, metaDna.dnaId, metaDna.layerDna, editionCount));
 
       setCount++;
-      print(`${setCount}/${total} - ${editionCount}:${metaDna[0]}`);
+      print(`${setCount}/${total} - ${editionCount}:${metaDna.dnaId}`);
       editionCount++;
     }
     layerConfigIndex++;

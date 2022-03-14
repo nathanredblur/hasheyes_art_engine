@@ -7,8 +7,6 @@ const buildSetup = (buildDir) => {
   }
   // create build folders
   fs.mkdirSync(buildDir);
-  fs.mkdirSync(`${buildDir}/json`);
-  fs.mkdirSync(`${buildDir}/videos`);
 };
 
 export default buildSetup;

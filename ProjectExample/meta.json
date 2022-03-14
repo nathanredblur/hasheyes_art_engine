@@ -1,0 +1,187 @@
+[
+  {
+    "name": "Your Collection #1",
+    "description": "Remember to replace this description",
+    "author": "NathanRedBlur",
+    "version": "1.0.0",
+    "tags": [
+      "example",
+      "collection"
+    ],
+    "image": "ipfs://NewUriToReplace/1.mp4",
+    "dna": "76a8623b999975ee288aa437d2db64d4bcc696bf",
+    "edition": 1,
+    "date": 1647233505164,
+    "attributes": [
+      {
+        "trait_type": "Music Style",
+        "value": "Metal",
+        "path": "layers/Music/Metal#10.wav"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Purple",
+        "path": "layers/Background/Purple#25.png"
+      },
+      {
+        "trait_type": "Fire",
+        "value": "Hell",
+        "path": "layers/Fire/Hell#10.mov"
+      },
+      {
+        "trait_type": "Pokemon",
+        "value": "Moltres",
+        "path": "layers/Pokemon/Moltres#10.mov"
+      }
+    ],
+    "compiler": "HashEyes Art Engine"
+  },
+  {
+    "name": "Your Collection #2",
+    "description": "Remember to replace this description",
+    "author": "NathanRedBlur",
+    "version": "1.0.0",
+    "tags": [
+      "example",
+      "collection"
+    ],
+    "image": "ipfs://NewUriToReplace/2.mp4",
+    "dna": "97693e484811fa1db77779353be0192ac3a3ccd0",
+    "edition": 2,
+    "date": 1647233505164,
+    "attributes": [
+      {
+        "trait_type": "Music Style",
+        "value": "Metal",
+        "path": "layers/Music/Metal#10.wav"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Purple",
+        "path": "layers/Background/Purple#25.png"
+      },
+      {
+        "trait_type": "Fire",
+        "value": "Hell",
+        "path": "layers/Fire/Hell#10.mov"
+      },
+      {
+        "trait_type": "Pokemon",
+        "value": "Charizard",
+        "path": "layers/Pokemon/Charizard#10.mov"
+      }
+    ],
+    "compiler": "HashEyes Art Engine"
+  },
+  {
+    "name": "Your Collection #3",
+    "description": "Remember to replace this description",
+    "author": "NathanRedBlur",
+    "version": "1.0.0",
+    "tags": [
+      "example",
+      "collection"
+    ],
+    "image": "ipfs://NewUriToReplace/3.mp4",
+    "dna": "d506bab3be1e6adbddb264534f74d6ee99377d42",
+    "edition": 3,
+    "date": 1647233505164,
+    "attributes": [
+      {
+        "trait_type": "Music Style",
+        "value": "Rock",
+        "path": "layers/Music/Rock#10.wav"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Red",
+        "path": "layers/Background/Red#10.png"
+      },
+      {
+        "trait_type": "Fire",
+        "value": "Hell",
+        "path": "layers/Fire/Hell#10.mov"
+      },
+      {
+        "trait_type": "Pokemon",
+        "value": "Moltres",
+        "path": "layers/Pokemon/Moltres#10.mov"
+      }
+    ],
+    "compiler": "HashEyes Art Engine"
+  },
+  {
+    "name": "Your Collection #4",
+    "description": "Remember to replace this description",
+    "author": "NathanRedBlur",
+    "version": "1.0.0",
+    "tags": [
+      "example",
+      "collection"
+    ],
+    "image": "ipfs://NewUriToReplace/4.mp4",
+    "dna": "a09c6a7321eecd6a09968a3a77c030a9c8de925c",
+    "edition": 4,
+    "date": 1647233505164,
+    "attributes": [
+      {
+        "trait_type": "Music Style",
+        "value": "Rock",
+        "path": "layers/Music/Rock#10.wav"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Green",
+        "path": "layers/Background/Green#10.png"
+      },
+      {
+        "trait_type": "Fire",
+        "value": "Hell",
+        "path": "layers/Fire/Hell#10.mov"
+      },
+      {
+        "trait_type": "Pokemon",
+        "value": "Moltres",
+        "path": "layers/Pokemon/Moltres#10.mov"
+      }
+    ],
+    "compiler": "HashEyes Art Engine"
+  },
+  {
+    "name": "Your Collection #5",
+    "description": "Remember to replace this description",
+    "author": "NathanRedBlur",
+    "version": "1.0.0",
+    "tags": [
+      "example",
+      "collection"
+    ],
+    "image": "ipfs://NewUriToReplace/5.mp4",
+    "dna": "7b42c54fa3a40c0cde5bf0dfe121cca8c16512b5",
+    "edition": 5,
+    "date": 1647233505164,
+    "attributes": [
+      {
+        "trait_type": "Music Style",
+        "value": "Hard_Core",
+        "path": "layers/Music/Hard_Core#10.wav"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Red",
+        "path": "layers/Background/Red#10.png"
+      },
+      {
+        "trait_type": "Fire",
+        "value": "Hell",
+        "path": "layers/Fire/Hell#10.mov"
+      },
+      {
+        "trait_type": "Pokemon",
+        "value": "Moltres",
+        "path": "layers/Pokemon/Moltres#10.mov"
+      }
+    ],
+    "compiler": "HashEyes Art Engine"
+  }
+]
