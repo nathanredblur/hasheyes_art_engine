@@ -17,7 +17,8 @@ export const generateVideo = (metaData, basePath) =>
     let ff = ffmpeg()
     const filterChain = []
 
-    let outputs = ''
+    let videoOut = ''
+    let audioInput = ''
     for (let i = 0; i < metaData.attributes.length; i++) {
       console.log(metaData.attributes[i])
       const filePath = metaData.attributes[i].path
@@ -25,26 +26,48 @@ export const generateVideo = (metaData, basePath) =>
 
       // if audio format
       if (audioRegex.test(filePath)) {
-        continue
-      }
+        audioInput = `${i}`
 
-      if (!outputs) {
-        outputs = `[${i}]`
-        continue
-      }
+        // if first audio track
+        if (!audioInput) {
+          audioInput = `[${i}]`
+          continue
+        }
 
-      filterChain.push({
-        inputs: [outputs, `[${i}]`],
-        filter: 'overlay',
-        options: { x: 0, y: 0 },
-        outputs: `output${i}`,
-      })
-      outputs = `output${i}`
+        // audio mix
+        // https://superuser.com/questions/1029466/how-to-mix-two-audio-files-with-ffmpeg-amerge-filter
+        filterChain.push({
+          inputs: [audioInput],
+          filter: 'volume',
+          options: 1,
+          outputs: `ao${i}`,
+        })
+
+        audioInput = `ao${i}`
+      } else {
+        // If fist video track
+        if (!videoOut) {
+          videoOut = `[${i}]`
+          continue
+        }
+
+        filterChain.push({
+          inputs: [videoOut, `[${i}]`],
+          filter: 'overlay',
+          options: { x: 0, y: 0 },
+          outputs: `output${i}`,
+        })
+        videoOut = `output${i}`
+      }
     }
 
     if (filterChain.length) {
-      ff = ff.complexFilter(filterChain, outputs)
+      ff = ff.complexFilter(filterChain)
     }
+
+    // map video output
+    ff = ff.map(`${videoOut}`)
+    ff = ff.map(`${audioInput}`)
 
     ff = ff
       .on('start', () => {
@@ -62,15 +85,23 @@ export const generateVideo = (metaData, basePath) =>
         resolve(outputVideoPath)
       })
 
-    // TODO: fix audio
-    // .map(`0:a:0`) https://linuxpip.org/ffmpeg-combine-audio-video/
     ff.output(outputVideoPath).run()
   })
 
-export const generateMedia = async (metaData, basePath) => {
-  try {
-    await generateVideo(metaData[0], basePath)
-  } catch (err) {
-    console.log(err)
-  }
+export const generateMedia = async (metaDataList, basePath) => {
+  const videoProcess = metaDataList.map((metaData) => generateVideo(metaData, basePath))
+
+  Promise.all(videoProcess)
+    .then(() => {
+      console.log('Complete')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+
+  // try {
+  //   await generateVideo(metaDataList[0], basePath)
+  // } catch (err) {
+  //   console.log(err)
+  // }
 }
