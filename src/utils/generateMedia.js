@@ -1,4 +1,5 @@
 import ffmpeg from 'fluent-ffmpeg'
+import asyncPool from './asyncPool.js'
 import { print, printProgress } from './printMsg.js'
 
 const audioRegex = /\.(mp3|ogg|wav)$/
@@ -20,7 +21,7 @@ export const generateVideo = (metaData, basePath) =>
     let videoOut = ''
     let audioInput = ''
     for (let i = 0; i < metaData.attributes.length; i++) {
-      console.log(metaData.attributes[i])
+      // console.log(metaData.attributes[i])
       const filePath = metaData.attributes[i].path
       ff = ff.input(`${basePath}/${filePath}`)
 
@@ -89,12 +90,10 @@ export const generateVideo = (metaData, basePath) =>
   })
 
 export const generateMedia = async (metaDataList, basePath) => {
-  const videoProcess = metaDataList.map((metaData) => generateVideo(metaData, basePath))
-
   // TODO: handle errors and concurrency
-  // https://www.npmjs.com/package/async-mutex#user-content-semaphore
 
-  Promise.all(videoProcess)
+  const concurrency = 2
+  asyncPool(concurrency, metaDataList, (metaData) => generateVideo(metaData, basePath))
     .then(() => {
       console.log('Complete')
     })
