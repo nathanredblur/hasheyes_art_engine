@@ -91,6 +91,9 @@ export const generateVideo = (metaData, basePath) =>
 export const generateMedia = async (metaDataList, basePath) => {
   const videoProcess = metaDataList.map((metaData) => generateVideo(metaData, basePath))
 
+  // TODO: handle errors and concurrency
+  // https://www.npmjs.com/package/async-mutex#user-content-semaphore
+
   Promise.all(videoProcess)
     .then(() => {
       console.log('Complete')
@@ -98,10 +101,4 @@ export const generateMedia = async (metaDataList, basePath) => {
     .catch((err) => {
       console.log(err)
     })
-
-  // try {
-  //   await generateVideo(metaDataList[0], basePath)
-  // } catch (err) {
-  //   console.log(err)
-  // }
 }
